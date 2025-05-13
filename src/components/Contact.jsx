@@ -73,8 +73,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">Email Us</h3>
-                  <p className="opacity-80">info@gamecraft.com</p>
-                  <p className="opacity-80">support@gamecraft.com</p>
+                  <p className="opacity-80">thesoftwaredistrict@gmail.com</p>
+                  {/* <p className="opacity-80">support@gamecraft.com</p> */}
                 </div>
               </div>
               
@@ -84,8 +84,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">Call Us</h3>
-                  <p className="opacity-80">+1 (555) 123-4567</p>
-                  <p className="opacity-80">+1 (555) 987-6543</p>
+                  <p className="opacity-80">+923706180386</p>
+                  {/* <p className="opacity-80">+1 (555) 987-6543</p> */}
                 </div>
               </div>
             </div>

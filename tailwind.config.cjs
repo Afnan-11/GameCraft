@@ -49,3 +49,31 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
+
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}"
+  ],
+  theme: {
+    extend: {
+      // your extended colors, borderRadius, etc.
+    },
+    // ✅ Add this screens section:
+    screens: {
+      'xs': '300px',   // 👈 Custom extra small breakpoint
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+};

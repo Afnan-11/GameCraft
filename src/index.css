@@ -51,3 +51,16 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* .zoom {
+  &:hover {
+    transform: scale(2);
+  }
+} */
+
+
+/* In your Tailwind CSS file (e.g., global.css) */
+.zoom {
+  @apply transition-transform duration-300 hover:scale-110;
+}
+

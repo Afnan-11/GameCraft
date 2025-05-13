@@ -66,7 +66,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Your email"
-                className={`flex-1 px-4 py-2 rounded-l-md border ${theme.name === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-300'}`}
+                className={`w-[100%] flex px-4 py-2 rounded-l-md border ${theme.name === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-300'}`}
               />
               <button
                 type="submit"
