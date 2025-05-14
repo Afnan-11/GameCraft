@@ -12,7 +12,7 @@ const Hero = () => {
 
   useEffect(() => {
     const checkScreen = () => {
-      setIsSmallScreen(window.innerWidth < 940)
+      setIsSmallScreen(window.innerWidth < 1024)
       // setIsSmallScreen(window.innerWidth < 840)
     }
 
@@ -33,7 +33,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <div className='relative min-h-screen grid md:grid-cols-2 items-center overflow-hidden  '>
+    <div className='relative min-h-screen  overflow-hidden  '>
       {/* Background Image with Overlay */}
       <div className='absolute inset-0 z-0'>
         <img
@@ -75,305 +75,38 @@ const Hero = () => {
           />
         ))}
       </div>
+      <div className='grid md:grid-cols-2 items-center'>
+        {/* Main Content */}
+        <div className=' absolute  w-[40%] text-center mt-9 lg:top-[50%] lg:left-[10%]  lg:transform lg:-translate-x-[10%] lg:-translate-y-1/2  top-[50%]  left-[50%] transform translate-x-[-50%] translate-y-[-50%] lg:text-left z-50 '>
+          <div className='max-w-3xl '>
+            <div className='mb-3'>
+              <span className='text-xs'>Welcome to Sorftware District</span>
+            </div>
+            <motion.h1
+              className='text-4xl md:text-5xl font-bold mb-4'
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className={`${theme.accentColor} leading-9`}>
+                Turning Imagination into Reality
+              </span>
+            </motion.h1>
 
-      {/* Floating Game Elements */}
-      {!isSmallScreen && (
-        <div className='absolute inset-0 z-40'>
-          {/* ---------- Game Image ---------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/Layer 8.png'
-            alt='Floating Girl'
-            className='absolute w-40 md:w-[5%] top-[3em] left-[40em]'
-          />
+            <motion.p
+              className='text-xs mb-8 opacity-90'
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              At Software District, we believe every great idea deserves to be
+              experienced. From captivating mobile games to console epics and
+              immersive AR/VR worlds, we transform imagination into interactive
+              realities. Powered by passion, driven by innovation—we bring
+              vision to life.
+            </motion.p>
 
-          {/* ------------ play store ---------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/Layer 4.png'
-            alt='Floating Girl'
-            className='absolute w-40 md:w-[5%] top-[7em] left-[37em]'
-          />
-          {/* ------------ box store ---------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/Layer 3.png'
-            alt='Floating Girl'
-            className='absolute w-40 md:w-[5%] top-[12em] left-[42em]'
-          />
-          {/* --------------- A tag Images -------------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/Layer 6.png'
-            alt='Floating Girl'
-            className='absolute w-40 md:w-12 top-[14em] left-[37em]'
-          />
-          {/* ---------- podium image ----------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/podium.png'
-            alt='Floating Girl'
-            className='absolute w-40 md:w-12 top-[19em] left-[40em] '
-          />
-          {/* ----------- Boy AI image ---------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/Layer 11.png'
-            alt='Floating Girl'
-            className='absolute w-40 md:w-[20%] top-[7em] right-[12rem] '
-          />
-          {/* ------------- Girl Robot Image ----------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/—Pngtree—character 3d cute female police_14135026.png'
-            alt='Floating Girl'
-            className='absolute w-40 md:w-8 top-[14em] right-[10em] '
-          />
-          <motion.img
-            src='/images/Rectangle 1.png'
-            alt='Floating Girl'
-            className='absolute w-40 md:w-8 top-[19em] right-[14em] '
-            // animate={{ y: [0, -20, 0] }}
-            // transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          />
-          {/* -------------- Robot image ------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/Layer 10.png'
-            alt='Floating Girl'
-            className='absolute w-40 md:w-9 bottom-[12em] right-[13em] '
-          />
-          {/* <motion.img
-          src='/images/Layer 4.png'
-          alt='Floating Girl'
-          className='absolute w-40 md:w-16 top-10 left-1/2 '
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        /> */}
-          {/* ---------- tekken 6 image ----------  */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/tekken-6-tekken-5-death-by-degrees-nina-williams-others-2fa654aa4f1c719b5838413c7c93bbe3.png'
-            alt='Floating Girl'
-            className='absolute w-40 md:w-[14%] top-[6em] right-[22em]  '
-          />
-
-          {/* <motion.img
-          src='/images/Layer 11.png'
-          alt='VR Woman'
-          className='absolute w-40 md:w-23 top-12 right-10'
-          animate={{ y: [0, -25, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-        /> */}
-          {/* ------------ 3 robot cartoon images ---------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/image+20.png'
-            alt='Dog on Scooter'
-            className='absolute w-28 w-30 md:w-23   bottom-0 left-6 '
-          />
-
-          {/* --------------- fisbi image ----------- */}
-          {/* <motion.img
-          src='/images/Layer 2.png'
-          alt='Car'
-          className='absolute w-36 md:w-23 bottom-4 right-5'
-          animate={{ x: [0, 10, -10, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        /> */}
-
-          {/* --------------- car image ---------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/hot-wheels-png-20195.png'
-            alt='Car'
-            className='absolute w-[17%] bottom-[6em] right-[15em] '
-          />
-          {/* -------------- spider robot image ---------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/vecteezy_3d-render-of-a-friendly-robot-spider_56260625.png'
-            alt='Car'
-            className='absolute w-16 bottom-[12em]  right-[18em] '
-          />
-          {/* -------- dog bike ------- */}
-          <motion.img
-            initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.2,
-              transition: {
-                scale: { duration: 0.3, ease: 'easeOut' },
-              },
-            }}
-            animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-            }}
-            src='/images/Layer 1.png'
-            alt='Spider'
-            className='absolute w-24 md:w-[10%] bottom-[3em] right-[25em] '
-          />
-          {/* <motion.img
-          src='/images/Layer 2.png'
-          alt='Car'
-          className='absolute w-36 bottom-4 right-5'
-          animate={{ x: [0, 10, -10, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        /> */}
-        </div>
-      )}
-
-      {/* Main Content */}
-      <div className='container mx-auto ml-10   sm:px-[5%] z-20  xs:text-sm xs:px[5%]   '>
-        <div className='max-w-3xl'>
-          <div className='mb-3'>
-            <span className='text-xs'>Welcome to Sorftware District</span>
-          </div>
-          <motion.h1
-            className='text-4xl md:text-5xl font-bold mb-4'
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className={theme.accentColor}>
-              Turning Imagination <br /> into Reality
-            </span>
-          </motion.h1>
-
-          <motion.p
-            className='text-xs mb-8 opacity-90'
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            At Software District, we believe every great idea deserves to be
-            experienced. From captivating mobile games to console epics and
-            immersive AR/VR worlds, we transform imagination into interactive
-            realities. Powered by passion, driven by innovation—we bring vision
-            to life.
-          </motion.p>
-
-          {/* <motion.div
+            {/* <motion.div
             className='flex flex-wrap gap-4 mb-12'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -399,7 +132,7 @@ const Hero = () => {
             </motion.a>
           </motion.div> */}
 
-          {/* <motion.div
+            {/* <motion.div
             className='flex gap-8 md:gap-16'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -410,7 +143,7 @@ const Hero = () => {
                 size={32}
                 weight='bold'
                 className={theme.accentColor}
-              />  
+              />
               <span className='mt-2 font-medium'>MOBILE</span>
             </div>
             <div className='flex flex-col items-center'>
@@ -425,60 +158,372 @@ const Hero = () => {
               />
               <span className='mt-2 font-medium'>CONSOLE</span>
             </div>
-            
+
           </motion.div> */}
-          <div className='absolute flex md:flex-row  xs:flex-col gap-3 xs:gap-2 '>
-            {/* Button 1 */}
-            <div className='left-[12em] sm:bottom-[2em]'>
-              <button
-                className={`
-        relative px-6 py-3 text-[15px] font-semibold text-white bg-cyan-800 rounded-md
-        transition-all duration-300 ease-in-out
-        xs:px-4 xs:py-2 xs:text-[13px]
-        ${isFlashing ? 'animate-pulse' : ''}
-      `}
-              >
-                <span className='relative z-10'>Explore Our Services</span>
-                <span
-                  className={`
-          absolute inset-0 rounded-md bg-cyan-400 opacity-0 blur-md
-          transition-opacity duration-300 
-          ${isFlashing ? 'opacity-60' : 'opacity-30'}
+          {/* ------------ Hero Buttons ------------ */}
+            {/* <div className='relative'> */}
+              <div className='z-50 flex items-center   md:flex-row xs:flex-col  xs:gap-5 '>
+                {/* Button 1 */}
+                <div className=' sm:bottom-[2em]'>
+                  <a
+                    href='#services'
+                    className={`
+          relative px-6 py-3 text-[15px] font-semibold text-white bg-cyan-800 rounded-md
+          transition-all duration-300 ease-in-out
+          xs:px-6 xs:py-3 xs:text-[13px] whitespace-nowrap
+          ${isFlashing ? 'animate-pulse' : ''}
         `}
-                />
-                <span className='absolute inset-0 rounded-md bg-cyan-400 opacity-20 blur-md' />
-                <span className='absolute inset-0 rounded-md border border-cyan-300 opacity-50' />
-              </button>
-            </div>
+                  >
+                    <span className='relative z-10'>Explore Our Services</span>
+                    <span
+                      className={`
+            absolute inset-0 rounded-md bg-cyan-400 opacity-0 blur-md
+            transition-opacity duration-300
+            ${isFlashing ? 'opacity-60' : 'opacity-30'}
+          `}
+                    />
+                    <span className='absolute inset-0 rounded-md bg-cyan-400 opacity-20 blur-md' />
+                    <span className='absolute inset-0 rounded-md border border-cyan-300 opacity-50' />
+                  </a>
+                </div>
 
-            {/* Button 2 */}
-            <div className='px-6 py-3 xs:px-4 xs:py-2 xs:text-[13px] text-[15px] font-semibold bg-cyan-800 rounded-md'>
-              <button>View Portfolio</button>
-            </div>
+                {/* Button 2 */}
+                <div className='px-6 py-3 xs:px-6 xs:py-2 xs:text-[13px] text-[15px] whitespace-nowrap font-semibold bg-cyan-800 rounded-md'>
+                  <a href='#portfolio' className='text-white'>
+                    View Portfolio
+                  </a>
+                </div>
 
-            {/* Button 3 */}
-            <div className='left-[12em] bottom-[2em]'>
-              <button
-                className={`
-        relative px-6 py-3 text-[15px] font-semibold text-white bg-cyan-800 rounded-md
-        transition-all duration-300 ease-in-out
-        xs:px-4 xs:py-2 xs:text-[13px]
-        ${isFlashing ? 'animate-pulse' : ''}
+                {/* Button 3 */}
+                <div className=' bottom-[2em]'>
+                  <a
+                    href='https://www.linkedin.com/company/softwaredistrict/'
+                    target='_blank'
+                    className={`
+      relative px-6 py-3 text-[15px] font-semibold text-white bg-cyan-800 rounded-md
+      transition-all duration-300 ease-in-out
+      xs:px-6 xs:py-3 xs:text-[13px] whitespace-nowrap
+      ${isFlashing ? 'animate-pulse' : ''}
+    `}
+                  >
+                    <span className='relative z-10'>Get Free Consultation</span>
+                    <span
+                      className={`
+        absolute inset-0 rounded-md bg-cyan-400 opacity-0 blur-md
+        transition-opacity duration-300
+        ${isFlashing ? 'opacity-60' : 'opacity-30'}
       `}
-              >
-                <span className='relative z-10'>Get Free Consultation</span>
-                <span
-                  className={`
-          absolute inset-0 rounded-md bg-cyan-400 opacity-0 blur-md
-          transition-opacity duration-300 
-          ${isFlashing ? 'opacity-60' : 'opacity-30'}
-        `}
-                />
-                <span className='absolute inset-0 rounded-md bg-cyan-400 opacity-20 blur-md' />
-                <span className='absolute inset-0 rounded-md border border-cyan-300 opacity-50' />
-              </button>
-            </div>
+                    />
+                    <span className='absolute inset-0 rounded-md bg-cyan-400 opacity-20 blur-md' />
+                    <span className='absolute inset-0 rounded-md border border-cyan-300 opacity-50' />
+                  </a>
+                </div>
+              </div>
+            {/* </div> */}
           </div>
+        </div>
+
+        <div>
+          {/* Floating Game Elements */}
+          {!isSmallScreen && (
+            <div className='absolute inset-0 z-20'>
+              {/* ---------- Game Image ---------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/Layer 8.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-[5%] top-[3em] left-[40em]'
+              />
+
+              {/* ------------ play store ---------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/Layer 4.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-[5%] top-[7em] left-[37em]'
+              />
+              {/* ------------ box store ---------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/Layer 3.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-[5%] top-[12em] left-[42em]'
+              />
+              {/* --------------- A tag Images -------------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/Layer 6.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-12 top-[16em] left-[41em]'
+              />
+              {/* ---------- podium image ----------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/podium.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-12 top-[19em] left-[40em] '
+              />
+              {/* ---------- bhalu image ----------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/download.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-12 bottom-[8em] left-[42em] '
+              />
+              {/* ---------- fisbi image ----------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/Layer 2.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-12 bottom-[6em] left-[40em] '
+              />
+              {/* ----------- Boy AI image ---------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/Layer 11.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-[20%] top-[7em] right-[10rem] '
+              />
+              {/* ---------- tekken 6 image ----------  */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/tekken-6-tekken-5-death-by-degrees-nina-williams-others-2fa654aa4f1c719b5838413c7c93bbe3.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-[14%] top-[3em] right-[22em]  '
+              />
+              {/* ------------- Girl Robot Image ----------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/—Pngtree—character 3d cute female police_14135026.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-8 top-[13em] right-[5em] '
+              />
+              <motion.img
+                src='/images/Rectangle 1.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-8 top-[22em] right-[10em] '
+                // animate={{ y: [0, -20, 0] }}
+                // transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              />
+              {/* -------------- Robot image ------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/Layer 10.png'
+                alt='Floating Girl'
+                className='absolute w-40 md:w-9 bottom-[9em] right-[9em] '
+              />
+              {/* <motion.img
+          src='/images/Layer 4.png'
+          alt='Floating Girl'
+          className='absolute w-40 md:w-16 top-10 left-1/2 '
+          animate={{ y: [0, -20, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+        /> */}
+
+              {/* <motion.img
+          src='/images/Layer 11.png'
+          alt='VR Woman'
+          className='absolute w-40 md:w-23 top-12 right-10'
+          animate={{ y: [0, -25, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+        /> */}
+              {/* ------------ 3 robot cartoon images ---------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/image+20.png'
+                alt='Dog on Scooter'
+                className='absolute w-28 w-30 md:w-23   bottom-0 left-6 '
+              />
+
+              {/* --------------- fisbi image ----------- */}
+              {/* <motion.img
+          src='/images/Layer 2.png'
+          alt='Car'
+          className='absolute w-36 md:w-23 bottom-4 right-5'
+          animate={{ x: [0, 10, -10, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+        /> */}
+
+              {/* --------------- car image ---------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/hot-wheels-png-20195.png'
+                alt='Car'
+                className='absolute w-[17%] bottom-[2em] right-[14em] '
+              />
+              {/* -------------- spider robot image ---------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/vecteezy_3d-render-of-a-friendly-robot-spider_56260625.png'
+                alt='Car'
+                className='absolute w-16 bottom-[5em]  right-[17em] '
+              />
+              {/* -------- dog bike ------- */}
+              <motion.img
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: {
+                    scale: { duration: 0.3, ease: 'easeOut' },
+                  },
+                }}
+                animate={isHovered ? { y: 0 } : { y: [0, -20, 0] }}
+                transition={{
+                  y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                src='/images/Layer 1.png'
+                alt='Spider'
+                className='absolute w-24 md:w-[10%] bottom-[1em] right-[23em] '
+              />
+              {/* <motion.img
+          src='/images/Layer 2.png'
+          alt='Car'
+          className='absolute w-36 bottom-4 right-5'
+          animate={{ x: [0, 10, -10, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+        /> */}
+            </div>
+          )}
         </div>
       </div>
 

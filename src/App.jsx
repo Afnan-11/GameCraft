@@ -11,12 +11,12 @@ import Footer from './components/Footer'
 import ThemeSelector from './components/ThemeSelector'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-// import 'animate.css';
 
+// import 'animate.css';
 
 function App() {
   const theme = useSelector((state) => state.theme)
-  
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -26,7 +26,11 @@ function App() {
   }, [])
 
   return (
-    <div className={`min-h-screen min-w-full overflow-hidden transition-colors duration-300 ${theme.bgColor} ${theme.name === 'light' ? theme.accentColor : theme.textColor}`}>
+    <div
+      className={`min-h-screen min-w-full overflow-hidden transition-colors duration-300 ${
+        theme.bgColor
+      } ${theme.name === 'light' ? theme.accentColor : theme.textColor}`}
+    >
       <Navbar />
       <Hero />
       <Platforms />
